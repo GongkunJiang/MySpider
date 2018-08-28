@@ -1,0 +1,41 @@
+[INFO  - 2018-08-25T03:08:25.592Z] GhostDriver - Main - running on port 7620
+[INFO  - 2018-08-25T03:08:27.658Z] Session [231a2b50-a814-11e8-a91b-4194b477c133] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2018-08-25T03:08:27.658Z] Session [231a2b50-a814-11e8-a91b-4194b477c133] - page.customHeaders:  - {}
+[INFO  - 2018-08-25T03:08:27.658Z] Session [231a2b50-a814-11e8-a91b-4194b477c133] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-7-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2018-08-25T03:08:27.658Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 231a2b50-a814-11e8-a91b-4194b477c133
+[ERROR - 2018-08-25T03:08:30.371Z] Session [231a2b50-a814-11e8-a91b-4194b477c133] - page.onError - msg: ReferenceError: Can't find variable: ue
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-08-25T03:08:30.371Z] Session [231a2b50-a814-11e8-a91b-4194b477c133] - page.onError - stack:
+  (anonymous function) (https://www.amazon.com/War-Peace-Leo-Nikolayevich-Tolstoy/dp/1427030200:12371)
+  m (https://www.amazon.com/War-Peace-Leo-Nikolayevich-Tolstoy/dp/1427030200:9)
+  (anonymous function) (https://www.amazon.com/War-Peace-Leo-Nikolayevich-Tolstoy/dp/1427030200:11)
+  X (https://www.amazon.com/War-Peace-Leo-Nikolayevich-Tolstoy/dp/1427030200:13)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-08-25T03:08:30.784Z] Session [231a2b50-a814-11e8-a91b-4194b477c133] - page.onError - msg: TypeError: undefined is not an object (evaluating 'I.count')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-08-25T03:08:30.784Z] Session [231a2b50-a814-11e8-a91b-4194b477c133] - page.onError - stack:
+  logError (https://www.amazon.com/War-Peace-Leo-Nikolayevich-Tolstoy/dp/1427030200:15)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-08-25T03:08:31.332Z] Session [231a2b50-a814-11e8-a91b-4194b477c133] - page.onError - msg: Syntax error, unrecognized expression: 
+
+
+
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-08-25T03:08:31.332Z] Session [231a2b50-a814-11e8-a91b-4194b477c133] - page.onError - stack:
+  querySelectorAll (:0)
+  n (https://images-na.ssl-images-amazon.com/images/I/61ea4y7yPdL._RC%7C11IYhapguOL.js,61+TsDgq2mL.js,21iSNz47xoL.js,012FVc3131L.js,01iozfH27ML.js,31KE7boYKEL.js,31yRaEj-EtL.js,51rqb0nVCNL.js,11AHlQhPRjL.js,01xMsWWFUQL.js,11CYRXogq+L.js,116tgw9TSaL.js,21auxuI+dRL.js,01PoLXBDXWL.js,61AgSpTULJL.js,01mi-J86cyL.js,110HZneHcZL.js,31Fwa3IMfsL.js,01rpauTep4L.js,11JJQC-EglL.js,01jMDczGPDL.js_.js?AUIClients/AmazonUI#144375-T1:123)
+  find (https://images-na.ssl-images-amazon.com/images/I/61ea4y7yPdL._RC%7C11IYhapguOL.js,61+TsDgq2mL.js,21iSNz47xoL.js,012FVc3131L.js,01iozfH27ML.js,31KE7boYKEL.js,31yRaEj-EtL.js,51rqb0nVCNL.js,11AHlQhPRjL.js,01xMsWWFUQL.js,11CYRXogq+L.js,116tgw9TSaL.js,21auxuI+dRL.js,01PoLXBDXWL.js,61AgSpTULJL.js,01mi-J86cyL.js,110HZneHcZL.js,31Fwa3IMfsL.js,01rpauTep4L.js,11JJQC-EglL.js,01jMDczGPDL.js_.js?AUIClients/AmazonUI#144375-T1:128)
+  init (https://images-na.ssl-images-amazon.com/images/I/61ea4y7yPdL._RC%7C11IYhapguOL.js,61+TsDgq2mL.js,21iSNz47xoL.js,012FVc3131L.js,01iozfH27ML.js,31KE7boYKEL.js,31yRaEj-EtL.js,51rqb0nVCNL.js,11AHlQhPRjL.js,01xMsWWFUQL.js,11CYRXogq+L.js,116tgw9TSaL.js,21auxuI+dRL.js,01PoLXBDXWL.js,61AgSpTULJL.js,01mi-J86cyL.js,110HZneHcZL.js,31Fwa3IMfsL.js,01rpauTep4L.js,11JJQC-EglL.js,01jMDczGPDL.js_.js?AUIClients/AmazonUI#144375-T1:32)
+  b (https://images-na.ssl-images-amazon.com/images/I/61ea4y7yPdL._RC%7C11IYhapguOL.js,61+TsDgq2mL.js,21iSNz47xoL.js,012FVc3131L.js,01iozfH27ML.js,31KE7boYKEL.js,31yRaEj-EtL.js,51rqb0nVCNL.js,11AHlQhPRjL.js,01xMsWWFUQL.js,11CYRXogq+L.js,116tgw9TSaL.js,21auxuI+dRL.js,01PoLXBDXWL.js,61AgSpTULJL.js,01mi-J86cyL.js,110HZneHcZL.js,31Fwa3IMfsL.js,01rpauTep4L.js,11JJQC-EglL.js,01jMDczGPDL.js_.js?AUIClients/AmazonUI#144375-T1:30)
+  success (https://images-na.ssl-images-amazon.com/images/I/015iJdPoytL._RC%7C71NQtmnkHVL.js,61nvS-Ml8hL.js,01JS2B6NLKL.js,41auSr815yL.js,01FweAqXd9L.js,01wBjiz9OvL.js,216el1NpxhL.js,31DWA1ljacL.js,51KWW-9uxcL.js,31kByMCr23L.js_.js?AUIClients/NavDesktopMetaAsset#desktop:328)
+  (anonymous function) (https://www.amazon.com/War-Peace-Leo-Nikolayevich-Tolstoy/dp/1427030200:11)
+  resolveWith (https://images-na.ssl-images-amazon.com/images/I/61ea4y7yPdL._RC%7C11IYhapguOL.js,61+TsDgq2mL.js,21iSNz47xoL.js,012FVc3131L.js,01iozfH27ML.js,31KE7boYKEL.js,31yRaEj-EtL.js,51rqb0nVCNL.js,11AHlQhPRjL.js,01xMsWWFUQL.js,11CYRXogq+L.js,116tgw9TSaL.js,21auxuI+dRL.js,01PoLXBDXWL.js,61AgSpTULJL.js,01mi-J86cyL.js,110HZneHcZL.js,31Fwa3IMfsL.js,01rpauTep4L.js,11JJQC-EglL.js,01jMDczGPDL.js_.js?AUIClients/AmazonUI#144375-T1:47)
+  d (https://images-na.ssl-images-amazon.com/images/I/61ea4y7yPdL._RC%7C11IYhapguOL.js,61+TsDgq2mL.js,21iSNz47xoL.js,012FVc3131L.js,01iozfH27ML.js,31KE7boYKEL.js,31yRaEj-EtL.js,51rqb0nVCNL.js,11AHlQhPRjL.js,01xMsWWFUQL.js,11CYRXogq+L.js,116tgw9TSaL.js,21auxuI+dRL.js,01PoLXBDXWL.js,61AgSpTULJL.js,01mi-J86cyL.js,110HZneHcZL.js,31Fwa3IMfsL.js,01rpauTep4L.js,11JJQC-EglL.js,01jMDczGPDL.js_.js?AUIClients/AmazonUI#144375-T1:163)
+  b (https://images-na.ssl-images-amazon.com/images/I/61ea4y7yPdL._RC%7C11IYhapguOL.js,61+TsDgq2mL.js,21iSNz47xoL.js,012FVc3131L.js,01iozfH27ML.js,31KE7boYKEL.js,31yRaEj-EtL.js,51rqb0nVCNL.js,11AHlQhPRjL.js,01xMsWWFUQL.js,11CYRXogq+L.js,116tgw9TSaL.js,21auxuI+dRL.js,01PoLXBDXWL.js,61AgSpTULJL.js,01mi-J86cyL.js,110HZneHcZL.js,31Fwa3IMfsL.js,01rpauTep4L.js,11JJQC-EglL.js,01jMDczGPDL.js_.js?AUIClients/AmazonUI#144375-T1:175)
+
+  phantomjs://platform/console++.js:263 in error
