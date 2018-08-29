@@ -2,13 +2,14 @@
 
 # 我还是太笨了，这么一点代码我花了有20个小时了
 # 这点代码还可以用更多的函数封装精简一下，不过我已经不想再纠缠下去了
-import os
+import os,re
 def convert(path):
     n = 1
     dirs = os.listdir(path)
     for file in dirs:
         if file.endswith('.html'):
             filepath = path + '\\' + file
+            print 'Convert start!\t' + file + '\n'
             os.system('gitbook-convert -m 1 %s %s' % (filepath, path))
             # 为了方便检索课件知识点，我也是拼了老命了
             # 起初在一点都不懂的情况下用命令行转换，提示缺少readme文件
@@ -19,7 +20,7 @@ def convert(path):
             # 绝望到想哭的时候找到了有点样子的gitbook范本，查看人家的
             # readme发现内容极其丰富，再回头看看github给我生成的是什么鬼
             # TM就生成的一行英文而已，我TM
-            # 病急乱投医，偶然翻阅教程帖子发现gitbook-convert可以转pdf为gitbook文件
+            # 病急乱投医，偶然翻阅教程帖子发现gitbook-convert可以转html为gitbook文件
             # 至此，终于找到了真正的正确的道路，虽然后面还有无穷的坎在笑嘻嘻地等着我...
             subsummary = '%s\\%s' % (path, 'SUMMARY.md')
             if subsummary != parentsummary:
@@ -37,7 +38,13 @@ def convert(path):
                     # 原来正确操作如此简洁精炼
                     lists = lines[3:]
                     for list in lists:
+                        # 绝对路径不行的
+                        # 两层 md = list.replace('(', '(' + path.split('\\')[-1] + '\\')
+                        # 三层 path.split('\\')[-2] + '\\' +path.split('\\')[-1]
+                        # if file == 'index.html':
                         md = list.replace('(', '(' + path.split('\\')[-1] + '\\')
+                        # else:
+                        # md = list.replace('(', '(' + path.split('\\')[-2] + '\\' +path.split('\\')[-1] + '\\')
                         with open(parentsummary, 'a+') as f:
                             f.write('\n' + md)
                         print '\n' + md
@@ -56,7 +63,10 @@ def convert(path):
                     sub.close()
                     print '+' * 100
                     md = '* [%s](%s)' % (subname.split('.')[0], subname)
+                    # if file == 'index.html':
                     md = md.replace('(', '(' + path.split('\\')[-1] + '\\')
+                    # else:
+                    # md = md.replace('(', '(' + path.split('\\')[-2] + '\\' + path.split('\\')[-1] + '\\')
                     print '\n' + md
                     with open(parentsummary, 'a+') as f:
                         f.write('\n' + md)
@@ -81,8 +91,27 @@ if __name__ == '__main__':
     # 老哥建议不要把路径写死，为了把这所谓的脚本加入环境变量
     # 方便使用命令行调用，就我个人而言没这必要
     # 需要转换某个传智播客的课件的话只要复制路径替换一下
-    path = r"C:\Users\Administrator\Desktop\MySQL".encode('GBK')
+    path = u"C:\\Users\\Administrator\\Desktop\\微信公众号".encode('GBK')
     parentsummary = path + '\\' + 'SUMMARY.md'
     convert(path)
     g2p(path)
     print 'Job done!!!'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
