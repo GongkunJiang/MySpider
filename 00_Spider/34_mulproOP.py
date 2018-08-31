@@ -13,33 +13,32 @@ def start(n,comic_url):
     urllists.append(comic_url)
     driver = PhantomJS()
     driver.get(comic_url)
-    get_images_url(n, driver)
+    get_images_url(n, driver,comic_url)
     while True:
         try:
             driver.find_element_by_xpath("//li[@id='next_item']/a[@id='mainControlNext']").click()
             comic_url = driver.current_url
             if comic_url not in urllists:
                 urllists.append(comic_url)
-                get_images_url(n,driver)
+                get_images_url(n,driver,comic_url)
                 driver.find_element_by_xpath("//li[@id='next_item']/a[@id='mainControlNext']").click()
                 # print n + '\t' + comic_url
-
         except:
             print 'All done!'
             break
 
 
-def get_images_url(n,driver):
+def get_images_url(n,driver,comic_url):
     pages = driver.find_elements_by_xpath("//span[contains(@class,'comic-ft')]")
     # 图片需滑动页面还需要一点时间才能加载出来
     for page in pages:
         ActionChains(driver).move_to_element(page).perform()
         # 容易受到实时网速影响，爬的过程中可能需要动态调整
-        time.sleep(0.25)
+        time.sleep(0.1)
     response = driver.page_source.encode('utf-8')
     title = driver.find_element_by_xpath('//span[@class="title-comicHeading"]').get_attribute('textContent')
     chapter = title.replace(' ', '_').replace('10:00',u'10点')
-    print n + '\t' + title
+    print n + '\tSave start\t' + title
     # xpath抓不到图片地址 find_element_by_xpath("//li[contains(@style,'width: 313px')]/img")
     # 只好用正则
     with open('./assets/34_OnePiece.html', 'w') as f:
@@ -48,7 +47,12 @@ def get_images_url(n,driver):
     images_url = re.findall(pattern, response)
     for m in range(0, len(pages)):
         # print n + '\t' + pages[m].text, images_url[m]
-        store_images(n,chapter, pages[m].text, images_url[m])
+        try:
+            store_images(n,chapter, pages[m].text, images_url[m])
+        except:
+            print n + '\t Restart'
+            get_images_url(n,driver,comic_url)
+    print n + '\tSave done\t' + title
 
 
 def store_images(n,chapter, page, url):
@@ -60,6 +64,7 @@ def store_images(n,chapter, page, url):
     with open('%s/%s.jpg' % (filepath, Image_name), 'wb') as f:
         f.write(Image_data)
     # print n + '\tSave done\t' + chapter + page
+
 
 
 def get_name(page):
