@@ -1,3 +1,17 @@
+1、先拉下来，会自动合并的（不用操心）
+
+git pull origin master
+
+2、再上传
+
+git push -u origin master
+
+
+
+
+
+
+
 
 gitbook-convert -m 1 section.1.html ./
 gitbook-convert -m 1 courseware/section.1.html courseware/
